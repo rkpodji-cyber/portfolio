@@ -1,0 +1,2450 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+Romuald Kpodji – Cybersécurité, Python, Data & IA
+</title>
+
+<meta
+  name="description"
+  content="Romuald Kpodji – Cybersécurité, automatisation Python, data et IA à Lomé."
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Sora:wght@400;700;800&display=swap"
+  rel="stylesheet"
+>
+
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+  --bg:#060E1B;
+
+  --card:rgba(255,255,255,.05);
+
+  --line:rgba(255,255,255,.11);
+
+  --text:#EAF1F8;
+
+  --muted:#9DB1C6;
+
+  --teal:#19D3B8;
+
+  --blue:#2F8CF5;
+
+  --gold:#F5B841;
+
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  margin:0;
+
+  background:var(--bg);
+
+  color:var(--text);
+
+  font:
+    400 16px/1.65
+    Manrope,
+    system-ui,
+    sans-serif;
+}
+
+h1,
+h2,
+h3{
+
+  font-family:
+    Sora,
+    "Segoe UI",
+    sans-serif;
+
+  margin:0;
+
+  line-height:1.15;
+}
+
+a{
+  color:inherit;
+}
+
+:focus-visible{
+
+  outline:
+    3px solid var(--gold);
+
+  outline-offset:3px;
+}
+
+.wrap{
+
+  max-width:1080px;
+
+  margin:0 auto;
+
+  padding:
+    0 22px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav{
+
+  margin:
+    18px auto 0;
+
+  max-width:1080px;
+
+  padding:
+    0 22px;
+}
+
+.bar{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:16px;
+
+  padding:
+    10px 12px
+    10px 22px;
+
+  border:
+    1px solid var(--line);
+
+  background:
+    rgba(255,255,255,.04);
+
+  border-radius:999px;
+}
+
+.logo{
+
+  font-family:Sora,sans-serif;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  font-size:.95rem;
+}
+
+.links{
+
+  display:flex;
+
+  gap:22px;
+}
+
+.links a{
+
+  text-decoration:none;
+
+  color:var(--muted);
+
+  font-size:.88rem;
+
+  transition:.2s ease;
+}
+
+.links a:hover{
+
+  color:var(--text);
+}
+
+
+/* =========================================================
+   BOUTONS
+========================================================= */
+
+.btn{
+
+  display:inline-block;
+
+  padding:
+    11px 22px;
+
+  border-radius:999px;
+
+  font-weight:700;
+
+  font-size:.92rem;
+
+  text-decoration:none;
+
+  border:
+    1px solid transparent;
+
+  transition:
+    .2s ease;
+}
+
+.btn.main{
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--teal),
+      var(--blue)
+    );
+
+  color:#04101C;
+}
+
+.btn.main:hover{
+
+  filter:brightness(1.1);
+
+  transform:
+    translateY(-2px);
+}
+
+.btn.ghost{
+
+  background:
+    rgba(255,255,255,.08);
+
+  border-color:
+    var(--line);
+}
+
+.btn.ghost:hover{
+
+  background:
+    rgba(255,255,255,.15);
+
+  transform:
+    translateY(-2px);
+}
+
+.btn.small{
+
+  padding:
+    8px 15px;
+
+  font-size:.82rem;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:
+    70px 0
+    60px;
+}
+
+.hero::before{
+
+  content:"";
+
+  position:absolute;
+
+  right:-8%;
+
+  top:-10%;
+
+  width:70%;
+
+  height:120%;
+
+  background:
+
+    radial-gradient(
+      closest-side,
+      rgba(25,211,184,.28),
+      rgba(47,140,245,.16) 55%,
+      transparent 75%
+    );
+
+  pointer-events:none;
+}
+
+.hero .wrap{
+
+  position:relative;
+
+  display:grid;
+
+  grid-template-columns:
+    1.1fr 1fr;
+
+  gap:30px;
+
+  align-items:center;
+}
+
+.hero h1{
+
+  font-size:
+    clamp(
+      1.7rem,
+      3.6vw,
+      2.6rem
+    );
+
+  font-weight:400;
+}
+
+.hero h1 em{
+
+  display:block;
+
+  font-weight:800;
+
+  font-style:italic;
+
+  font-size:
+    clamp(
+      2rem,
+      4.6vw,
+      3.3rem
+    );
+
+  margin-top:6px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff,
+      var(--teal)
+    );
+
+  -webkit-background-clip:text;
+
+  background-clip:text;
+
+  color:transparent;
+}
+
+.hero p{
+
+  color:var(--muted);
+
+  max-width:46ch;
+
+  margin:
+    20px 0
+    28px;
+}
+
+.btns{
+
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+}
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.visual{
+
+  position:relative;
+
+  height:400px;
+}
+
+.photo{
+
+  position:absolute;
+
+  left:50%;
+
+  top:50%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  width:290px;
+
+  height:290px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #1B4F8F,
+      #0A2447 70%
+    );
+
+  border:
+    1px solid var(--line);
+
+  display:grid;
+
+  place-items:center;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 0 50px
+    rgba(25,211,184,.15);
+}
+
+.photo img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+
+/* =========================================================
+   STATISTIQUES
+========================================================= */
+
+.stat{
+
+  position:absolute;
+
+  padding:
+    12px 18px;
+
+  border-radius:14px;
+
+  background:
+    rgba(14,30,52,.75);
+
+  border:
+    1px solid var(--line);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.stat b{
+
+  display:block;
+
+  font:
+    700 1.5rem
+    Sora,
+    sans-serif;
+
+  line-height:1.1;
+}
+
+.stat span{
+
+  font-size:.78rem;
+
+  color:var(--muted);
+}
+
+.s1{
+  left:2%;
+  top:24%;
+}
+
+.s2{
+  right:2%;
+  top:6%;
+}
+
+.s3{
+  left:6%;
+  bottom:8%;
+}
+
+.s4{
+  right:4%;
+  bottom:12%;
+}
+
+.s1 b,
+.s3 b{
+
+  color:var(--gold);
+}
+
+
+/* =========================================================
+   OUTILS
+========================================================= */
+
+.tools{
+
+  text-align:center;
+
+  padding:
+    26px 0
+    8px;
+}
+
+.tools p{
+
+  margin:
+    0 0 16px;
+
+  color:var(--muted);
+
+  font-size:.85rem;
+}
+
+.tools div{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  justify-content:center;
+
+  gap:
+    12px 34px;
+
+  font:
+    700 1.05rem
+    Sora,
+    sans-serif;
+
+  color:#C9D6E4;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+
+  padding:
+    70px 0
+    10px;
+}
+
+.head{
+
+  text-align:center;
+
+  margin-bottom:38px;
+}
+
+.head h2{
+
+  font-size:
+    clamp(
+      1.6rem,
+      3vw,
+      2.1rem
+    );
+
+  font-weight:700;
+}
+
+.head p{
+
+  color:var(--muted);
+
+  max-width:60ch;
+
+  margin:
+    12px auto 0;
+}
+
+
+/* =========================================================
+   GRILLE
+========================================================= */
+
+.grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      1fr
+    );
+
+  gap:26px;
+}
+
+
+/* =========================================================
+   CARTES
+========================================================= */
+
+.card{
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  border:
+    1px solid var(--line);
+
+  background:
+    var(--card);
+
+  transition:
+    .25s ease;
+}
+
+.card:hover{
+
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(
+      25,
+      211,
+      184,
+      .35
+    );
+}
+
+.prev{
+
+  height:170px;
+
+  display:grid;
+
+  place-items:center;
+
+  text-align:center;
+
+  padding:16px;
+
+  font:
+    700 1.15rem
+    Sora,
+    sans-serif;
+}
+
+.p1{
+
+  background:
+    linear-gradient(
+      160deg,
+      #0B2A55,
+      #0E7C86
+    );
+}
+
+.p2{
+
+  background:
+    linear-gradient(
+      160deg,
+      #10254A,
+      #5B3FD1
+    );
+}
+
+.p3{
+
+  background:
+    linear-gradient(
+      160deg,
+      #0A3B45,
+      #1E8F5B
+    );
+}
+
+.p4{
+
+  background:
+    linear-gradient(
+      160deg,
+      #3A2A0E,
+      #C9861A
+    );
+}
+
+.p5{
+
+  background:
+    linear-gradient(
+      160deg,
+      #16263B,
+      #287C91
+    );
+}
+
+.cap{
+
+  padding:
+    18px 20px
+    22px;
+}
+
+.pill{
+
+  display:inline-block;
+
+  font-size:.76rem;
+
+  padding:
+    3px 12px;
+
+  border-radius:999px;
+
+  border:
+    1px solid var(--line);
+
+  background:
+    rgba(255,255,255,.07);
+
+  color:var(--teal);
+
+  font-weight:700;
+}
+
+.cap h3{
+
+  font-size:1.05rem;
+
+  margin:
+    12px 0
+    6px;
+}
+
+.cap p{
+
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:.92rem;
+}
+
+.card-actions{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:18px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.svc{
+
+  display:grid;
+
+  grid-template-columns:
+    280px 1fr;
+
+  gap:
+    6px 32px;
+
+  padding:
+    20px 0
+    20px 18px;
+
+  border-left:
+    3px solid var(--teal);
+
+  margin-bottom:14px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(25,211,184,.07),
+      transparent
+    );
+}
+
+.svc:nth-child(even){
+
+  border-left-color:
+    var(--gold);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(245,184,65,.07),
+      transparent
+    );
+}
+
+.svc h3{
+
+  font-size:1.1rem;
+}
+
+.svc p{
+
+  margin:0;
+
+  color:var(--muted);
+}
+
+
+/* =========================================================
+   COMPETENCES
+========================================================= */
+
+.skills{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  justify-content:center;
+}
+
+.skills span{
+
+  border:
+    1px solid var(--line);
+
+  background:
+    var(--card);
+
+  padding:
+    7px 15px;
+
+  border-radius:999px;
+
+  font-size:.9rem;
+}
+
+.certs{
+
+  text-align:center;
+
+  color:var(--muted);
+
+  margin-top:22px;
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.cert-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap:22px;
+}
+
+.cert-card{
+
+  border:
+    1px solid var(--line);
+
+  background:
+    var(--card);
+
+  border-radius:18px;
+
+  padding:24px;
+
+  text-align:center;
+
+  transition:
+    .25s ease;
+}
+
+.cert-card:hover{
+
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(
+      245,
+      184,
+      65,
+      .45
+    );
+}
+
+.cert-icon{
+
+  width:64px;
+
+  height:64px;
+
+  margin:
+    0 auto 18px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:50%;
+
+  background:
+    rgba(
+      245,
+      184,
+      65,
+      .10
+    );
+
+  font-size:1.8rem;
+}
+
+.cert-card h3{
+
+  font-size:1rem;
+
+  margin:
+    12px 0
+    8px;
+}
+
+.cert-card p{
+
+  color:var(--muted);
+
+  font-size:.88rem;
+
+  margin:
+    0 0
+    18px;
+}
+
+
+/* =========================================================
+   ETHIQUE
+========================================================= */
+
+.ethic{
+
+  max-width:760px;
+
+  margin:0 auto;
+
+  padding:26px;
+
+  border-radius:18px;
+
+  border:
+    1px solid
+    rgba(
+      245,
+      184,
+      65,
+      .4
+    );
+
+  background:
+    rgba(
+      245,
+      184,
+      65,
+      .06
+    );
+}
+
+.ethic h2{
+
+  font-size:1.2rem;
+
+  color:var(--gold);
+
+  margin-bottom:8px;
+}
+
+.ethic p{
+
+  margin:0;
+
+  color:#D7E2EE;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.cta{
+
+  margin:
+    70px 0
+    0;
+
+  padding:
+    56px 0;
+
+  text-align:center;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(
+        47,
+        140,
+        245,
+        .16
+      )
+    );
+}
+
+.cta h2{
+
+  font-size:
+    clamp(
+      1.6rem,
+      3vw,
+      2.2rem
+    );
+}
+
+.cta a.mail{
+
+  display:block;
+
+  margin:
+    18px 0
+    10px;
+
+  font:
+    700
+    clamp(
+      1.1rem,
+      2.6vw,
+      1.6rem
+    )
+    Sora,
+    sans-serif;
+
+  color:var(--teal);
+
+  word-break:break-all;
+}
+
+.phone{
+
+  display:inline-block;
+
+  margin:
+    0 0
+    24px;
+
+  color:#D7E2EE;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  font-size:1.05rem;
+}
+
+.phone:hover{
+
+  color:var(--teal);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+  padding:
+    30px 0;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:.85rem;
+
+  border-top:
+    1px solid
+    var(--line);
+}
+
+.footer-links{
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:
+    10px 20px;
+
+  margin-bottom:14px;
+}
+
+.footer-links a{
+
+  text-decoration:none;
+
+  color:var(--muted);
+
+  transition:.2s;
+}
+
+.footer-links a:hover{
+
+  color:var(--teal);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+  .links{
+
+    display:none;
+  }
+
+  .hero .wrap{
+
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .cert-grid{
+
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+  }
+
+}
+
+@media(max-width:780px){
+
+  .svc{
+
+    grid-template-columns:1fr;
+  }
+
+  .visual{
+
+    height:auto;
+
+    display:grid;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap:12px;
+
+    padding-top:290px;
+  }
+
+  .photo{
+
+    top:140px;
+  }
+
+  .stat{
+
+    position:static;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .cert-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .bar{
+
+    padding-left:16px;
+  }
+
+  .hero{
+
+    padding-top:50px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<div class="nav">
+
+  <div class="bar">
+
+    <a
+      class="logo"
+      href="#top"
+    >
+      Romuald Kpodji
+    </a>
+
+
+    <nav
+      class="links"
+      aria-label="Navigation principale"
+    >
+
+      <a href="#projets">
+        Projets
+      </a>
+
+      <a href="#services">
+        Services
+      </a>
+
+      <a href="#competences">
+        Compétences
+      </a>
+
+      <a href="#certifications">
+        Certifications
+      </a>
+
+      <a href="#realisations">
+        Réalisations
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </nav>
+
+
+    <a
+      class="btn main"
+      href="#contact"
+    >
+      Demander un devis
+    </a>
+
+  </div>
+
+</div>
+
+
+
+<main id="top">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+  <div class="wrap">
+
+
+    <div>
+
+      <h1>
+
+        Bonjour, je suis Romuald,
+        j'aide les entreprises avec
+
+        <em>
+          Sécurité web &amp; Automatisation.
+        </em>
+
+      </h1>
+
+
+      <p>
+
+        Étudiant en cybersécurité à Lomé.
+        Je teste vos applications web
+        (avec autorisation), j'automatise vos
+        tâches en Python et je mets vos données
+        au propre.
+
+      </p>
+
+
+      <div class="btns">
+
+        <a
+          class="btn main"
+          href="#contact"
+        >
+          Discutons de votre projet
+        </a>
+
+
+        <a
+          class="btn ghost"
+          href="#projets"
+        >
+          Voir mes projets
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="visual">
+
+
+      <!-- =================================================
+           PHOTO DE ROMUALD
+
+           IMPORTANT :
+           romuald.jpg doit être dans le même dossier
+           que index.html.
+      ================================================== -->
+
+      <div class="photo">
+
+        <img
+          src="romuald.jpg"
+          alt="Portrait de Romuald Kpodji"
+        >
+
+      </div>
+
+
+
+      <div class="stat s1">
+
+        <b>
+          3<sup>e</sup>
+        </b>
+
+        <span>
+          année en cybersécurité
+        </span>
+
+      </div>
+
+
+      <div class="stat s2">
+
+        <b>
+          3
+        </b>
+
+        <span>
+          certifications
+        </span>
+
+      </div>
+
+
+      <div class="stat s3">
+
+        <b>
+          5
+        </b>
+
+        <span>
+          services proposés
+        </span>
+
+      </div>
+
+
+      <div class="stat s4">
+
+        <b>
+          4
+        </b>
+
+        <span>
+          projets présentés
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     OUTILS
+===================================================== -->
+
+<div class="tools wrap">
+
+  <p>
+    Outils que j'utilise au quotidien
+  </p>
+
+
+  <div>
+
+    <span>
+      Python
+    </span>
+
+    <span>
+      Kali Linux
+    </span>
+
+    <span>
+      Nmap
+    </span>
+
+    <span>
+      pfSense
+    </span>
+
+    <span>
+      Icinga 2
+    </span>
+
+    <span>
+      PostgreSQL
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PROJETS
+===================================================== -->
+
+<section id="projets">
+
+  <div class="wrap">
+
+
+    <div class="head">
+
+      <h2>
+        Projets réalisés
+      </h2>
+
+      <p>
+        Des travaux concrets en sécurité,
+        réseaux et développement, présentés
+        avec leur contexte et leur résultat.
+      </p>
+
+    </div>
+
+
+
+    <div class="grid">
+
+
+      <!-- PROJET 1 -->
+
+      <article class="card">
+
+        <div class="prev p1">
+
+          Test d'intrusion web
+
+        </div>
+
+
+        <div class="cap">
+
+          <span class="pill">
+            Sécurité offensive
+          </span>
+
+
+          <h3>
+            Compromission complète d'une cible autorisée
+          </h3>
+
+
+          <p>
+            Laboratoire sur un serveur Debian/Apache :
+            chaîne d'attaque documentée dans un rapport
+            détaillé (Nmap, John the Ripper, SSH).
+          </p>
+
+
+          <div class="card-actions">
+
+            <a
+              class="btn ghost small"
+              href="https://github.com/rkpodji-cyber"
+              target="_blank"
+              rel="noopener"
+            >
+              Voir sur GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PROJET 2 -->
+
+      <article class="card">
+
+        <div class="prev p2">
+
+          Supervision réseau
+
+        </div>
+
+
+        <div class="cap">
+
+          <span class="pill">
+            Monitoring
+          </span>
+
+
+          <h3>
+            Icinga 2 sur réseau pfSense
+          </h3>
+
+
+          <p>
+            Supervision d'un réseau virtuel sécurisé,
+            en groupe, avec rapport de soutenance complet.
+          </p>
+
+
+          <div class="card-actions">
+
+            <a
+              class="btn ghost small"
+              href="https://github.com/rkpodji-cyber"
+              target="_blank"
+              rel="noopener"
+            >
+              Voir sur GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PROJET 3 -->
+
+      <article class="card">
+
+        <div class="prev p3">
+
+          Réseau d'entreprise
+
+        </div>
+
+
+        <div class="cap">
+
+          <span class="pill">
+            Réseaux
+          </span>
+
+
+          <h3>
+            Multi-sites et extension IoT « Smart Office »
+          </h3>
+
+
+          <p>
+            Segmentation par VLAN, ACL, SSH et sécurité
+            des ports sous Cisco Packet Tracer,
+            publiés sur GitHub.
+          </p>
+
+
+          <div class="card-actions">
+
+            <a
+              class="btn ghost small"
+              href="https://github.com/rkpodji-cyber"
+              target="_blank"
+              rel="noopener"
+            >
+              Voir sur GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PROJET 4 -->
+
+      <article class="card">
+
+        <div class="prev p4">
+
+          Car &amp; Logistique
+
+        </div>
+
+
+        <div class="cap">
+
+          <span class="pill">
+            En développement
+          </span>
+
+
+          <h3>
+            Plateforme de transit de véhicules (Togo)
+          </h3>
+
+
+          <p>
+            Calculateur de frais de dédouanement
+            et annuaire de transitaires.
+            Node.js, PostgreSQL et Flutter.
+          </p>
+
+
+          <div class="card-actions">
+
+            <a
+              class="btn ghost small"
+              href="https://github.com/rkpodji-cyber"
+              target="_blank"
+              rel="noopener"
+            >
+              Voir sur GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section id="services">
+
+  <div class="wrap">
+
+
+    <div class="head">
+
+      <h2>
+        Ce que je peux faire pour vous
+      </h2>
+
+    </div>
+
+
+    <div>
+
+
+      <div class="svc">
+
+        <h3>
+          Tests d'intrusion
+        </h3>
+
+        <p>
+          Audit d'un site ou d'une application web
+          avec votre autorisation écrite.
+          Vous recevez un rapport clair :
+          constats, niveau de risque et corrections.
+        </p>
+
+      </div>
+
+
+      <div class="svc">
+
+        <h3>
+          Automatisation de la sécurité web
+        </h3>
+
+        <p>
+          Vérifications régulières : ports ouverts,
+          en-têtes HTTP, certificats, sous-domaines.
+          Vous êtes prévenu dès que quelque chose change.
+        </p>
+
+      </div>
+
+
+      <div class="svc">
+
+        <h3>
+          Scripts Python sur mesure
+        </h3>
+
+        <p>
+          Traitement de fichiers, génération de rapports,
+          tâches répétitives : ce que vous faites à la main
+          chaque semaine, en quelques secondes.
+        </p>
+
+      </div>
+
+
+      <div class="svc">
+
+        <h3>
+          Nettoyage de données
+        </h3>
+
+        <p>
+          Fichiers Excel ou CSV désordonnés
+          (doublons, formats mélangés, valeurs manquantes)
+          transformés en données propres et utilisables.
+        </p>
+
+      </div>
+
+
+      <div class="svc">
+
+        <h3>
+          Solutions IA
+        </h3>
+
+        <p>
+          Tri et résumé de documents,
+          classification, assistants simples
+          adaptés à votre activité.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COMPETENCES
+===================================================== -->
+
+<section id="competences">
+
+  <div class="wrap">
+
+
+    <div class="head">
+
+      <h2>
+        Compétences
+      </h2>
+
+    </div>
+
+
+    <div class="skills">
+
+      <span>
+        Python
+      </span>
+
+      <span>
+        Nmap
+      </span>
+
+      <span>
+        Gobuster
+      </span>
+
+      <span>
+        Kali Linux
+      </span>
+
+      <span>
+        Administration Linux
+      </span>
+
+      <span>
+        VLAN, ACL, pfSense
+      </span>
+
+      <span>
+        Cryptographie (GPG, RSA)
+      </span>
+
+      <span>
+        OWASP Top 10
+      </span>
+
+      <span>
+        MySQL / PostgreSQL
+      </span>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+
+<section id="certifications">
+
+  <div class="wrap">
+
+
+    <div class="head">
+
+      <h2>
+        Certifications
+      </h2>
+
+      <p>
+        Retrouvez ici mes certifications et attestations.
+        Cliquez sur une certification pour consulter
+        directement son justificatif.
+      </p>
+
+    </div>
+
+
+
+    <div class="cert-grid">
+
+
+      <!-- =================================================
+           CERTIFICATION 1
+
+           Pour modifier :
+           - le nom
+           - l'organisme
+           - le fichier
+      ================================================== -->
+
+      <article class="cert-card">
+
+
+        <div class="cert-icon">
+          🏆
+        </div>
+
+
+        <span class="pill">
+          Cisco
+        </span>
+
+
+        <h3>
+          Cisco Packet Tracer
+        </h3>
+
+
+        <p>
+          Certification / attestation liée à la
+          simulation et aux réseaux informatiques.
+        </p>
+
+
+        <!--
+          Mets ton image dans :
+          certifications/packet-tracer.jpg
+        -->
+
+        <a
+          class="btn ghost small"
+          href="certifications/packet-tracer.jpg"
+          target="_blank"
+          rel="noopener"
+        >
+          Voir la certification
+        </a>
+
+
+      </article>
+
+
+
+      <!-- =================================================
+           CERTIFICATION 2
+      ================================================== -->
+
+      <article class="cert-card">
+
+
+        <div class="cert-icon">
+          🌐
+        </div>
+
+
+        <span class="pill">
+          Cisco
+        </span>
+
+
+        <h3>
+          Cisco IoT
+        </h3>
+
+
+        <p>
+          Certification / attestation liée aux
+          technologies IoT et réseaux.
+        </p>
+
+
+        <!--
+          Mets ton image dans :
+          certifications/cisco-iot.jpg
+        -->
+
+        <a
+          class="btn ghost small"
+          href="certifications/cisco-iot.jpg"
+          target="_blank"
+          rel="noopener"
+        >
+          Voir la certification
+        </a>
+
+
+      </article>
+
+
+
+      <!-- =================================================
+           CERTIFICATION 3
+      ================================================== -->
+
+      <article class="cert-card">
+
+
+        <div class="cert-icon">
+          🛡️
+        </div>
+
+
+        <span class="pill">
+          UNODC
+        </span>
+
+
+        <h3>
+          UNODC SPARK
+        </h3>
+
+
+        <p>
+          Formation / certification liée à la
+          cybercriminalité et à la sécurité numérique.
+        </p>
+
+
+        <!--
+          Mets ton image dans :
+          certifications/spark.jpg
+        -->
+
+        <a
+          class="btn ghost small"
+          href="certifications/spark.jpg"
+          target="_blank"
+          rel="noopener"
+        >
+          Voir la certification
+        </a>
+
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REGLE DE TRAVAIL
+===================================================== -->
+
+<section>
+
+  <div class="wrap">
+
+
+    <div class="ethic">
+
+      <h2>
+        Ma règle de travail
+      </h2>
+
+
+      <p>
+        Je ne teste que les systèmes pour lesquels
+        j'ai l'autorisation écrite du propriétaire.
+        Les résultats restent confidentiels et vous
+        sont remis uniquement à vous.
+      </p>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REALISATIONS & ACTUALITES
+===================================================== -->
+
+<section id="realisations">
+
+  <div class="wrap">
+
+
+    <div class="head">
+
+      <h2>
+        Réalisations &amp; actualités
+      </h2>
+
+
+      <p>
+        Cette section est dédiée à mes futurs projets
+        et sera mise à jour au fur et à mesure de
+        nouvelles réalisations, certifications,
+        publications et réussites professionnelles.
+      </p>
+
+    </div>
+
+
+
+    <div class="grid">
+
+
+      <!-- =================================================
+           MODELE POUR UNE FUTURE REALISATION
+
+           Tu peux copier ce bloc pour chaque nouveau
+           projet, certification, publication LinkedIn
+           ou réussite professionnelle.
+
+      ================================================== -->
+
+
+      <article class="card">
+
+
+        <div class="prev p5">
+
+          À venir
+
+        </div>
+
+
+        <div class="cap">
+
+
+          <span class="pill">
+            Future réalisation
+          </span>
+
+
+          <h3>
+            Ma prochaine réalisation
+          </h3>
+
+
+          <p>
+            Cette carte sera remplacée par une nouvelle
+            réalisation, un projet, une certification,
+            une publication ou une réussite professionnelle.
+          </p>
+
+
+          <div class="card-actions">
+
+
+            <!--
+              Ton profil LinkedIn
+            -->
+
+            <a
+              class="btn ghost small"
+              href="https://www.linkedin.com/in/romuald-kpodji-683373333/"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn
+            </a>
+
+
+            <!--
+              Ton GitHub
+            -->
+
+            <a
+              class="btn ghost small"
+              href="https://github.com/rkpodji-cyber"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<div
+  class="cta"
+  id="contact"
+>
+
+
+  <div class="wrap">
+
+
+    <h2>
+      Parlons de votre besoin
+    </h2>
+
+
+    <!-- EMAIL -->
+
+    <a
+      class="mail"
+      href="mailto:kpodjiromuald@gmail.com?subject=Demande%20de%20projet%20-%20Portfolio%20Romuald%20Kpodji"
+    >
+      kpodjiromuald@gmail.com
+    </a>
+
+
+    <!-- TELEPHONE -->
+
+    <a
+      class="phone"
+      href="tel:+22893088181"
+    >
+      📞 +228 93 08 81 81
+    </a>
+
+
+    <div
+      class="btns"
+      style="justify-content:center"
+    >
+
+
+      <!-- EMAIL -->
+
+      <a
+        class="btn main"
+        href="mailto:kpodjiromuald@gmail.com?subject=Demande%20de%20projet%20-%20Portfolio%20Romuald%20Kpodji"
+      >
+        Envoyer un email
+      </a>
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        class="btn ghost"
+        href="https://wa.me/22893088181"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp
+      </a>
+
+
+      <!-- APPEL -->
+
+      <a
+        class="btn ghost"
+        href="tel:+22893088181"
+      >
+        Appeler
+      </a>
+
+
+      <!-- LINKEDIN -->
+
+      <a
+        class="btn ghost"
+        href="https://www.linkedin.com/in/romuald-kpodji-683373333/"
+        target="_blank"
+        rel="noopener"
+      >
+        LinkedIn
+      </a>
+
+
+      <!-- GITHUB -->
+
+      <a
+        class="btn ghost"
+        href="https://github.com/rkpodji-cyber"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub
+      </a>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+  <div class="footer-links">
+
+
+    <a
+      href="mailto:kpodjiromuald@gmail.com"
+    >
+      Email
+    </a>
+
+
+    <a
+      href="tel:+22893088181"
+    >
+      +228 93 08 81 81
+    </a>
+
+
+    <a
+      href="https://wa.me/22893088181"
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp
+    </a>
+
+
+    <a
+      href="https://www.linkedin.com/in/romuald-kpodji-683373333/"
+      target="_blank"
+      rel="noopener"
+    >
+      LinkedIn
+    </a>
+
+
+    <a
+      href="https://github.com/rkpodji-cyber"
+      target="_blank"
+      rel="noopener"
+    >
+      GitHub
+    </a>
+
+
+  </div>
+
+
+  Romuald Kpodji · Lomé, Togo ·
+  Cybersécurité &amp; Technologie
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document
+  .querySelectorAll('a[href^="#"]')
+  .forEach(function(a){
+
+    a.addEventListener(
+      'click',
+      function(e){
+
+        var t =
+          document.getElementById(
+            a.getAttribute('href')
+              .slice(1)
+          );
+
+        if(!t)return;
+
+        e.preventDefault();
+
+        var calm =
+          window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+          ).matches;
+
+        t.scrollIntoView({
+
+          behavior:
+            calm
+              ? 'auto'
+              : 'smooth'
+
+        });
+
+      }
+    );
+
+  });
+
+</script>
+
+
+</body>
+
+</html>
